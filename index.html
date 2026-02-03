@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valentine's Day</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
     <div class="main-body">
-        <img src="Propose I Love You GIF.gif" alt="Sample Image">
+        <img src="/media/Propose I Love You GIF.gif" alt="Sample Image">
         <h1>Will you be my Valentine?❤️❤️❤️</h1>
         <h3>Be careful with your decision!!</h3>
         <h4>Yes or No?</h4>
@@ -20,159 +21,6 @@
     </div>
 </body>
 
-<script>
-    let noClickCount = 0;
-    const maxSize = 15; // Maximum size multiplier
-
-    function handleYes() {
-        return window.location.href = "yes.html";
-    }
-
-    function handleNo() {
-        noClickCount++;
-        const yesButton = document.querySelector('.yes-button');
-        const newSize = 1 + (noClickCount * 2); // Increase by 0.3x each click
-        const finalSize = Math.min(newSize, maxSize); // Cap at maxSize
-        
-        yesButton.style.transform = `scale(${finalSize})`;
-        
-        // Optional: Add a small animation effect
-        yesButton.style.transition = 'transform 0.3s ease-out';
-    }
-</script>
+<script src="index.js"></script>
 
 </html>
-
-<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    .no-button {
-        background-color: lightblue;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: clamp(0.8rem, 2vw, 1rem);
-        border-radius: 5px;
-        transition: transform 0.2s, background-color 0.2s;
-    }
-
-    .no-button:hover {
-        background-color: #5dade2;
-        transform: scale(1.05);
-    }
-
-    .yes-button {
-        background-color: pink;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-size: clamp(0.8rem, 2vw, 1rem);
-        border-radius: 5px;
-        width: clamp(6rem, 25vw, 10rem);
-        height: clamp(6rem, 25vw, 10rem);
-        transition: transform 0.2s, background-color 0.2s;
-    }
-
-    .yes-button:hover {
-        background-color: #ff69b4;
-        transform: scale(1.05);
-    }
-
-    .buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-        gap: clamp(5px, 3vw, 10px);
-        flex-wrap: wrap;
-    }
-
-    .main-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        max-width: 100%;
-        background-color: #FFDBE6;
-    }
-
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 10px;
-        background-color: #FFDBE6;
-        min-height: 100vh;
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-        margin-bottom: 20px;
-    }
-
-    h1 {
-        color: #333;
-        text-align: center;
-        font-size: clamp(1.2rem, 5vw, 2rem);
-        margin: 10px 0;
-    }
-
-    h3, h4 {
-        color: #666;
-        text-align: center;
-        font-size: clamp(0.9rem, 3vw, 1.2rem);
-        margin: 5px 0;
-    }
-
-    p {
-        font-size: 16px;
-        color: #666;
-    }
-
-    /* Tablet responsiveness */
-    @media (max-width: 768px) {
-        .yes-button {
-            width: clamp(5rem, 20vw, 8rem);
-            height: clamp(5rem, 20vw, 8rem);
-        }
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-        .yes-button {
-            width: clamp(5rem, 18vw, 7rem);
-            height: clamp(5rem, 18vw, 7rem);
-        }
-
-        h1 {
-            font-size: clamp(1.1rem, 4vw, 1.5rem);
-        }
-
-        .buttons {
-            gap: clamp(3px, 2vw, 8px);
-        }
-    }
-
-    @media (max-width: 400px) {
-        .yes-button {
-            width: clamp(4.5rem, 16vw, 6rem);
-            height: clamp(4.5rem, 16vw, 6rem);
-            padding: 5px;
-        }
-
-        .no-button {
-            padding: 6px 12px;
-        }
-
-        h1 {
-            font-size: 1.1rem;
-        }
-    }
-</style>
